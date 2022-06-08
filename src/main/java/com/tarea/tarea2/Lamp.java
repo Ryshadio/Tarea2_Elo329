@@ -22,15 +22,15 @@ public class Lamp {
     }
     public void setRed(short r){
         this.r = r;
-        view.setColor(this.r,g,b);
+        if (state==LampState.ON) view.setColor(this.r,g,b);
     }
     public void setGreen(short g){
         this.g = g;
-        view.setColor(r,this.g,b);
+        if (state==LampState.ON)  view.setColor(r,this.g,b);
     }
     public void setBlue(short b){
         this.b = b;
-        view.setColor(r,g,this.b);
+        if (state==LampState.ON) view.setColor(r,g,this.b);
     }
 
 
@@ -41,5 +41,6 @@ public class Lamp {
     private short r,g,b;
     private LampState state;
     private LampView view;
+
 
 }
