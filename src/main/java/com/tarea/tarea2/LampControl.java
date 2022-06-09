@@ -1,30 +1,24 @@
 package com.tarea.tarea2;
 import javafx.scene.layout.Pane;
 
-public class LampControl {
+public class LampControl extends DomoticDeviceControl {
     public LampControl(int channel, Cloud c){
-        this.channel= channel;
-        cloud = c;
+        super(channel,c);
         view = new LampControlView(this);
     }
     public void pressPower(){
-        cloud.changeLampPowerState(channel);
-    }
-    public int getChannel(){
-        return channel;
+        cloud.changeLampPowerState(this.getChannel());
     }
     public Pane getView() { return view;}
     public void setRed(short r){
-        cloud.setRojo(r,channel);
+        cloud.setRojo(r,getChannel());
     }
     public void setGreen(short g){
-        cloud.setVerde(g,channel);
+        cloud.setVerde(g,getChannel());
     }
     public void setBlue(short b){
-        cloud.setAzul(b,channel);
+        cloud.setAzul(b,getChannel());
     }
-    private int channel;
-    private Cloud cloud;
     private Pane view;
 
 }

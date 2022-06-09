@@ -1,6 +1,8 @@
 package com.tarea.tarea2;
 
 import javafx.scene.Group;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
 
@@ -18,7 +20,7 @@ public class LampView extends Group {
                 27d, 50d,
                 22d, 50d,
                 22d, 20d});
-        base.setFill(Color.GREEN);
+        base.setFill(Color.BLACK);
         lampshade = new Polygon();
         lampshade.getPoints().addAll(new Double[]{
            10d,0d,
