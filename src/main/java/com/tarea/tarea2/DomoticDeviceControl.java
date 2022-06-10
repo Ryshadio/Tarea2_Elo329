@@ -8,6 +8,7 @@ public class DomoticDeviceControl {
     public int getChannel() {
         return channel;
     }
+    public void changeChannel(int ch){channel=ch;}
     protected Cloud cloud;
     private int channel;
 }

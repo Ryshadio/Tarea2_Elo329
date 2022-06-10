@@ -1,9 +1,10 @@
 package com.tarea.tarea2;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
@@ -16,7 +17,7 @@ public class LampControlView extends VBox {
         view.setFitWidth(60);
         view.setPreserveRatio(true);
         view.setOnMouseClicked(mouseEvent -> lampControl.pressPower());
-
+        Spinner <Integer> sp=new Spinner<Integer>(2,3,1);
 
         Slider slider1 = new Slider(0,255,0);
         Label red = new Label("R",slider1);
@@ -30,10 +31,23 @@ public class LampControlView extends VBox {
         slider3.setValue(255);
         Label blue = new Label("B",slider3);
 
-        getChildren().addAll(view,red,green,blue,slider1,slider2,slider3);
+        getChildren().addAll(view,red,green,blue,slider1,slider2,slider3,sp);
 
         this.setAlignment(Pos.CENTER);
         this.setSpacing(10.0);
+
+        sp.valueProperty().addListener(new ChangeListener() {
+            @Override
+            public void changed(ObservableValue observableValue, Object o, Object t1) {
+                int current=sp.getValue();
+                if(current==2){
+                    lampControl.changeChannel(current);
+                }
+                if(current==3){
+                    lampControl.changeChannel(current);
+                }
+            }
+        });
 
         slider1.valueProperty().addListener(new ChangeListener<Number>() {
             @Override

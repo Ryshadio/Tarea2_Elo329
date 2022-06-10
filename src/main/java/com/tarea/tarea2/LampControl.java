@@ -19,6 +19,7 @@ public class LampControl extends DomoticDeviceControl {
     public void setBlue(short b){
         cloud.setAzul(b,getChannel());
     }
+    public void changeCh(int ch){this.changeChannel(ch);}
     private Pane view;
 
 }
