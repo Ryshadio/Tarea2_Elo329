@@ -1,9 +1,11 @@
 package com.tarea.tarea2;
 
 import javafx.scene.Group;
+import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
@@ -18,10 +20,12 @@ public class RollerShadeView extends Group {
         getChildren().add(cloth);
 
         // Rolled up shade cloth
+
+
         Ellipse rightSide = new Ellipse(width, radius,radius/2,radius);
         rightSide.setFill(color);
         rightSide.setStroke(Color.BLACK);
-        getChildren().add(rightSide);
+        getChildren().addAll(rightSide);
     }
     public void setLength(double length) {
         cloth.setHeight(length);
