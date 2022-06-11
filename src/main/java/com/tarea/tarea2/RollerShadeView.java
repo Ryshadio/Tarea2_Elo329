@@ -11,11 +11,24 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 
 public class RollerShadeView extends Group {
-    public RollerShadeView(double maxLength, double width, double length, double radius, Color color) {
-        Image img = new Image(String.valueOf(Stage2.class.getResource("Cumple.png")));
-        ImageView view = new ImageView(img);
-        getChildren().add(view);
-        cloth = new Rectangle (width,length);
+    public RollerShadeView(double maxLength, double width, double length, double radius, Color color, String root) {
+        if(root!="") {
+            Media ventana = new Media(root);
+            MediaPlayer mediaPlayer1 = new MediaPlayer(ventana);
+            mediaPlayer1.setAutoPlay(true);
+            mediaPlayer1.setCycleCount(MediaPlayer.INDEFINITE);
+            mediaPlayer1.volumeProperty().set(0);
+            MediaView mediaView1 = new MediaView(mediaPlayer1);
+            mediaView1.setFitHeight(maxLength);
+            mediaView1.setPreserveRatio(true);
+            getChildren().add(mediaView1);
+
+        }else{
+            Image img = new Image(String.valueOf(Stage3.class.getResource("Cumple.png")));
+            ImageView imageView = new ImageView(img);
+            getChildren().add(imageView);
+        }
+        cloth = new Rectangle(width, length);
         cloth.setFill(color);
         getChildren().add(cloth);
 
