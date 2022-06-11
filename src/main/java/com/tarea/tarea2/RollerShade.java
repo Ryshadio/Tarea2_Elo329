@@ -71,7 +71,7 @@ public class RollerShade extends DomoticDevice {
                     }
                     break;
             }
-            System.out.printf(String.valueOf(length)+"\n");
+
             view.setLength(length);
         }
         private double alpha;

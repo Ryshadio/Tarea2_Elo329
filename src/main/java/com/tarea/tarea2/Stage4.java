@@ -48,8 +48,8 @@ public class Stage4 extends Application {
 
         int shadeChannel=2;
         int shadeChannel2=3;
-        RollerShade rs = new RollerShade(shadeChannel, 4, 150, 100);
-        RollerShade rs2 = new RollerShade(shadeChannel2, 4, 150, 100);
+        RollerShade rs = new RollerShade(shadeChannel, 4, 100, 100,"http://profesores.elo.utfsm.cl/~agv/elo329/1s22/Assignments/20220430_100849.mp4");
+        RollerShade rs2 = new RollerShade(shadeChannel2, 4, 177, 100,"http://profesores.elo.utfsm.cl/~agv/elo329/1s22/Assignments/20220430_101027.mp4");
         cloud.addRollerShade(rs);
         cloud.addRollerShade(rs2);
         pane.setLeft(rs.getView());
@@ -62,7 +62,7 @@ public class Stage4 extends Application {
         ShadeControl shadeControl = new ShadeControl(shadeChannel,cloud);
         hBox.getChildren().add(0,shadeControl.getView());
         hBox.setSpacing(50);
-        Scene scene = new Scene(pane, 500, 400);
+        Scene scene = new Scene(pane, 560, 400);
 
 
         primaryStage.setTitle("Domotic Devices Simulator");

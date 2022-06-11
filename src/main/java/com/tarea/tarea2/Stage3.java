@@ -47,7 +47,7 @@ public class Stage3 extends Application {
 
 
         int shadeChannel=2;
-        RollerShade rs = new RollerShade(shadeChannel, 4, 150, 500);
+        RollerShade rs = new RollerShade(shadeChannel, 4, 150, 100,"");
         cloud.addRollerShade(rs);
         pane.setLeft(rs.getView());
         hBox.setPadding(new Insets(20));

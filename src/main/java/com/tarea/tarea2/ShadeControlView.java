@@ -9,9 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.application.Application;
 
 
@@ -25,13 +23,13 @@ public class ShadeControlView extends BorderPane {
         Image up = new Image(String.valueOf(Stage1.class.getResource("Up.png")));
         ImageView upView = new ImageView(up);
         upView.setOnMouseClicked(mouseEvent -> sc.startUp());
-        upView.setFitWidth(20);
+        upView.setFitWidth(30);
         upView.setPreserveRatio(true);
 
         Image down = new Image(String.valueOf(Stage1.class.getResource("Down.png")));
         ImageView downView = new ImageView(down);
         downView.setOnMouseClicked(mouseEvent -> sc.startDown());
-        downView.setFitWidth(20);
+        downView.setFitWidth(30);
         downView.setPreserveRatio(true);
 
         Image right=new Image(String.valueOf((Stage1.class.getResource("Right.png"))));
@@ -40,7 +38,7 @@ public class ShadeControlView extends BorderPane {
             shadeControl.changeChannel(3);
             channelButton.setText(""+sc.getChannel());
         });
-        rightView.setFitWidth(20);
+        rightView.setFitWidth(30);
         rightView.setPreserveRatio(true);
 
         Image left=new Image(String.valueOf((Stage1.class.getResource("Left.png"))));
@@ -49,7 +47,7 @@ public class ShadeControlView extends BorderPane {
             shadeControl.changeChannel(2);
             channelButton.setText(""+sc.getChannel());
         });
-        leftView.setFitWidth(20);
+        leftView.setFitWidth(30);
         leftView.setPreserveRatio(true);
 
         channelButton.setOnAction( e-> {
@@ -57,12 +55,21 @@ public class ShadeControlView extends BorderPane {
         });
 
 
+        GridPane pane = new GridPane();
+        pane.prefHeight(100);
+        pane.prefWidth(100);
+        pane.setVgap(10);
+        pane.setHgap(10);
+        pane.setAlignment(Pos.CENTER);
+        GridPane.setConstraints(upView,1,0);
+        GridPane.setConstraints(channelButton,1,1);
+        GridPane.setConstraints(downView,1,2);
+        GridPane.setConstraints(leftView,0,1);
+        GridPane.setConstraints(rightView,2,1);
+        pane.getChildren().addAll(upView,downView,leftView,rightView,channelButton);
 
-        VBox vBox = new VBox();
-        vBox.setSpacing(10);
-        vBox.getChildren().addAll(upView,downView,leftView,rightView,channelButton);
-        BorderPane.setAlignment(vBox, Pos.BOTTOM_CENTER);
-        setBottom(vBox);
+        BorderPane.setAlignment(pane, Pos.BOTTOM_CENTER);
+        setBottom(pane);
 
     }
 }
