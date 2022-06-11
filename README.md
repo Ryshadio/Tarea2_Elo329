@@ -1,4 +1,7 @@
 # Tarea2 - Elo329
+## Integrantes:
+- Rodrigo Contreras
+- Diego Flores
 ## Archivos Componentes de la tarea:
 A continuación, viene incluida una captura de la **estructura de los archivos** que componen la **tarea**.
 
