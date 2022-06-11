@@ -9,6 +9,9 @@ import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
 public class RollerShadeView extends Group {
     public RollerShadeView(double maxLength, double width, double length, double radius, Color color, String root) {
